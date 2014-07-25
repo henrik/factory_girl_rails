@@ -1,0 +1,6 @@
+  factory :<%= singular_table_name %><%= explicit_class_option %> do
+<% for attribute in attributes -%>
+    <%= attribute.name %> <%= attribute.default.inspect %>
+<% end -%>
+  end
+end
