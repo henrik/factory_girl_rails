@@ -32,11 +32,11 @@ gem 'factory_girl_rails'
 ```
 
 Generators for factories will automatically substitute fixture (and maybe any other
-`fixture_replacement` you set). If you want to disable this feature, add the
-following to your application.rb file:
+`fixture_replacement` you set). If you want to disable this feature, create a file
+at `config/initializers/factory_girl.rb` containing:
 
 ```ruby
-config.generators do |g|
+Rails.application.config.generators do |g|
   g.factory_girl false
 end
 ```
@@ -45,7 +45,7 @@ Default factories directory is `test/factories`, or `spec/factories` if
 `test_framework` generator is set to `:rspec`; change this behavior with:
 
 ```ruby
-config.generators do |g|
+Rails.application.config.generators do |g|
   g.factory_girl dir: 'custom/dir/for/factories'
 end
 ```
